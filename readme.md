@@ -162,14 +162,20 @@ Cloudflare Pages 结构:
 
 ```
 LibreTV/
+├── css/
+│   └── styles.css       // 自定义样式
 ├── functions/
 │   └── proxy/
-│       └── [[path]].js  # CF Pages Function
+│       └── [[path]].js  // CF Pages Function
 ├── js/
-│   └── ... (config.js 默认 PROXY_URL='/proxy/')
-├── css/ ...
-├── *.html ...
-└── ...
+│   ├── app.js           // 主应用逻辑
+│   ├── api.js           // API请求处理
+│   ├── config.js        // 全局配置
+│   └── ui.js            // UI交互处理
+├── player.html          // 自定义视频播放器
+├── index.html           // 主页面
+├── robots.txt           // 搜索引擎爬虫配置
+└── sitemap.xml          // 站点地图
 ```
 
 Vercel 结构:
@@ -178,27 +184,42 @@ Vercel 结构:
 LibreTV/
 ├── api/
 │   └── proxy/
-│       └── [...path].js # Vercel Serverless Function
+│       └── [...path].mjs // Vercel Function
+├── css/
+│   └── styles.css        // 自定义样式
 ├── js/
-│   └── ... (config.js 修改 PROXY_URL='/api/proxy/')
-├── css/ ...
-├── *.html ...
-└── ...
+│   ├── app.js            // 主应用逻辑
+│   ├── api.js            // API请求处理
+│   ├── config.js         // 全局配置(config.js 修改 PROXY_URL='/api/proxy/')
+│   └── ui.js             // UI交互处理
+├── player.html           // 自定义视频播放器
+├── index.html            // 主页面
+├── robots.txt            // 搜索引擎爬虫配置
+├── package.json          // package配置
+├── package-lock.json     // package版本锁定
+└── sitemap.xml           // 站点地图
 ```
 
 Netlify 结构:
 
 ```
 LibreTV/
+├── css/
+│   └── styles.css       // 自定义样式
+├── js/
+│   ├── app.js           // 主应用逻辑
+│   ├── api.js           // API请求处理
+│   ├── config.js        // 全局配置(config.js 修改 PROXY_URL='/api/proxy/')
+│   └── ui.js            // UI交互处理
 ├── netlify/
 │   └── functions/
-│       └── proxy.js     # Netlify Function
-├── js/
-│   └── ... (config.js 默认 PROXY_URL='/proxy/')
-├── css/ ...
-├── *.html ...
-├── netlify.toml         # 包含重写规则
-└── ...
+│       └── proxy.mjs    // Netlify Function
+├── player.html          // 自定义视频播放器
+├── index.html           // 主页面
+├── robots.txt           // 搜索引擎爬虫配置
+├── package.json         // package配置
+├── package-lock.json    // package版本锁定
+└── sitemap.xml          // 站点地图
 ```
 
 (注意：实际项目中你只需保留与你目标平台对应的函数文件和配置)
