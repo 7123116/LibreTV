@@ -41,7 +41,7 @@ const API_SITES = {
     ckzy: {
         api: 'https://www.ckzy1.com',
         name: 'CK资源',
-        // detail: 'https://www.ckzy1.com'
+        adult: true
     },
     zy360: {
         api: 'https://360zy.com',
@@ -67,6 +67,59 @@ const API_SITES = {
         api: 'https://dbzy.com',
         name: '豆瓣资源',
         // detail: 'https://dbzy.com'
+    },
+    bfzy: {
+        api: 'https://bfzyapi.com',
+        name: '暴风资源',
+    },
+    mozhua: {
+        api: 'https://mozhuazy.com',
+        name: '魔爪资源',
+    },
+    mdzy: {
+        api: 'https://www.mdzyapi.com',
+        name: '魔都资源',
+    },
+    ruyi: {
+        api: 'https://cj.rycjapi.com',
+        name: '如意资源',
+    },
+
+    jkun: {
+        api: 'https://jkunzyapi.com',
+        name: 'jkun资源',
+        adult: true
+    },
+    bwzy: {
+        api: 'https://api.bwzym3u8.com',
+        name: '百万资源',
+        adult: true
+    },
+    souav: {
+        api: 'https://api.souavzy.vip',
+        name: 'souav资源',
+        adult: true
+    },
+    siwa: {
+        api: 'https://siwazyw.tv',
+        name: '丝袜资源',
+        adult: true
+    },
+    r155: {
+        api: 'https://155api.com',
+        name: '155资源',
+        adult: true
+    },
+    lsb: {
+        api: 'https://apilsbzy1.com',
+        name: 'lsb资源',
+        adult: true
+    },
+    huangcang: {
+        api: 'https://hsckzy.vip',
+        name: '黄色仓库',
+        adult: true,
+        detail: 'https://hsckzy.vip' // 添加detail URL以便特殊处理
     }
     // 您可以按需添加更多源
 };
@@ -139,10 +192,11 @@ const CUSTOM_API_CONFIG = {
     separator: ',',           // 分隔符
     maxSources: 5,            // 最大允许的自定义源数量
     testTimeout: 5000,        // 测试超时时间(毫秒) - 用于 app.js 的 testSiteAvailability
-    namePrefix: '自定义-',    // 自定义源名称前缀 (修改为中文)
+    namePrefix: 'Custom-',    // 自定义源名称前缀 (修改为中文)
     validateUrl: true,        // 验证URL格式 (app.js 中使用)
     cacheResults: true,       // 缓存测试结果 (app.js 中使用 localStorage)
-    cacheExpiry: 5184000000   // 缓存过期时间(2个月) (app.js 中使用)
+    cacheExpiry: 5184000000,  // 缓存过期时间(2个月) (app.js 中使用)
+    adultPropName: 'isAdult' // 用于标记成人内容的属性名
 };
 
 
